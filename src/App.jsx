@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Login from "./pages/Login.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Employees from "./pages/Employees.jsx";
+import Tasks from "./pages/Tasks.jsx";
+import Reports from "./pages/Reports.jsx";
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function getStoredUser() {
+  try {
+    const raw = localStorage.getItem("user");
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
 }
 
-export default App
+function Protected({ children }) {
+  const user = getStoredUser();
+  if (!user) return <Navigate to="/login" replace />;
+  return children;
+}
+
+function ManagerOnly({ children }) {
+  const user = getStoredUser();
+  if (!user) return <Navigate to="/login" replace />;
+  if (String(user.role || "").toLowerCase() !== "manager") {
+    return <Navigate to="/dashboard" replace />;
+  }
+  return children;
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <Protected>
+              <Dashboard />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/tasks"
+          element={
+            <Protected>
+              <Tasks />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/employees"
+          element={
+            <ManagerOnly>
+              <Employees />
+            </ManagerOnly>
+          }
+        />
+
+        <Route
+          path="/reports"
+          element={
+            <ManagerOnly>
+              <Reports />
+            </ManagerOnly>
+          }
+        />
+
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
