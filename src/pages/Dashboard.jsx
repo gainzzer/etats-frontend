@@ -8,6 +8,11 @@ import RecentTasksCard from "../components/dashboard/RecentTasksCard.jsx";
 import WeatherCard from "../components/dashboard/WeatherCard.jsx";
 import "../styles/dashboard.css";
 
+if (!user && !booted) {
+  setBooted(true);
+  checkSession();
+}
+
 function safeParseUser() {
   try {
     const raw = localStorage.getItem("user");
@@ -122,7 +127,8 @@ function groupTasks(rows) {
 }
 
 export default function Dashboard() {
-  const user = safeParseUser();
+  const [user, setUser] = useState(null);
+
   const role = String(user?.role || "").toLowerCase();
   const isManager = role === "manager";
   const myEmployeeId = user?.employeeId || user?.employee_id || null;
@@ -135,6 +141,17 @@ export default function Dashboard() {
   const [employeesCount, setEmployeesCount] = useState(0);
   const [error, setError] = useState("");
 
+  async function checkSession() {
+    try {
+      const res = await http.get("/auth/me");
+      setUser(res.data.user);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+    } catch {
+      localStorage.removeItem("user");
+      window.location.href = "/login";
+    }
+  }
+  
   async function loadDashboard() {
     try {
       setError("");

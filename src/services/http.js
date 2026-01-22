@@ -3,9 +3,8 @@ import { API_BASE } from "./api.js";
 
 const http = axios.create({
   baseURL: API_BASE,
-  withCredentials: true, 
+  withCredentials: true,
 });
-
 
 http.interceptors.response.use(
   (response) => response,
