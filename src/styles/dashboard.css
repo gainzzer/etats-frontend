@@ -1,0 +1,264 @@
+.dash-page {
+    padding: 20px;
+    background: #f6f7fb;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .dash-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .dash-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #111;
+  }
+  
+  .dash-subtitle {
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  .dash-refresh {
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+  
+  .dash-refresh:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+  }
+  
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 14px;
+  }
+  
+  .dash-card {
+    background: #fff;
+    border: 1px solid #e7e7ee;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(10, 10, 20, 0.05);
+  }
+  
+  .dash-wide {
+    margin-top: 14px;
+  }
+  
+  .dash-card-title {
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+  }
+  
+  .dash-profile-top {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .dash-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e2e2ea;
+    background: #fff;
+  }
+  
+  .dash-name {
+    font-weight: 900;
+    font-size: 18px;
+    color: #111;
+  }
+  
+  .dash-muted {
+    color: #666;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  
+  .dash-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .dash-badge {
+    font-size: 12px;
+    color: #222;
+    border: 1px solid #e5e5ee;
+    background: #fafbff;
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+  
+  .dash-profile-bottom {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    border-top: 1px dashed #ececf4;
+    padding-top: 12px;
+  }
+  
+  .dash-kv {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .dash-kv span {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .dash-kv b {
+    color: #111;
+    font-weight: 800;
+  }
+  
+  /* Stats */
+  .dash-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .dash-stat {
+    border: 1px solid #ececf4;
+    border-radius: 14px;
+    padding: 12px;
+    background: #fbfcff;
+  }
+  
+  .dash-stat-label {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .dash-stat-value {
+    margin-top: 6px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #111;
+  }
+  
+  /* List */
+  .dash-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dash-list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px dashed #ececf4;
+  }
+  
+  .dash-list-item:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  .dash-li-title {
+    font-weight: 800;
+    color: #111;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  
+  .dash-li-meta {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .dash-li-right {
+    font-weight: 900;
+    color: #111;
+    white-space: nowrap;
+  }
+  
+  /* Table-like recent tasks */
+  .dash-table {
+    width: 100%;
+    border: 1px solid #ececf4;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  .dash-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 12px;
+    align-items: start;
+    border-top: 1px solid #f0f0f7;
+    background: #fff;
+  }
+  
+  .dash-row-head {
+    background: #fbfcff;
+    border-top: none;
+    font-size: 12px;
+    font-weight: 900;
+    color: #333;
+  }
+  
+  .dash-cell-title {
+    min-width: 0;
+  }
+  
+  .dash-cell-strong {
+    font-weight: 900;
+    color: #111;
+  }
+  
+  .dash-cell-muted {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  
+  .dash-empty {
+    color: #666;
+    font-size: 14px;
+    padding: 6px 0;
+  }
+  
+  /* If manager, we add Employee column */
+  @media (min-width: 0px) {
+    /* default remains 4 columns */
+  }
+  
+  @media (max-width: 1050px) {
+    .dash-grid {
+      grid-template-columns: 1fr;
+    }
+    .dash-profile-bottom {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* manager extra column handled by inline grid change in JSX by adding another div,
+     so to keep it simple, we stretch automatically on small screens */
+  

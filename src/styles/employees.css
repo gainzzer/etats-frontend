@@ -1,0 +1,110 @@
+.employees-page {
+    padding: 20px;
+    background: #f6f7fb;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .employees-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .employees-title {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+    color: #111;
+  }
+  
+  .employees-subtitle {
+    margin-top: 4px;
+    color: #666;
+    font-size: 13px;
+  }
+  
+  /* Card look */
+  .employees-card {
+    background: #fff;
+    border: 1px solid #e7e7ee;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 10px 26px rgba(10, 10, 20, 0.06);
+  }
+  
+  .employees-card-title {
+    margin: 0 0 12px;
+    font-weight: 900;
+    color: #111;
+  }
+  
+  /* Employee list styling */
+  .employees-list {
+    margin: 0;
+  }
+  
+  .employees-item.list-group-item {
+    border: 1px solid #ececf4 !important;
+    border-radius: 14px !important;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 18px rgba(10, 10, 20, 0.04);
+  }
+  
+  .employees-item.list-group-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .employees-line1 {
+    color: #111;
+  }
+  
+  .employees-line2 {
+    color: #666;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  
+  /* Avatar */
+  .emp-avatar-wrap {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+  }
+  
+  .emp-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+  
+  /* Bootstrap inputs better */
+  .form-control,
+  .form-select {
+    border-radius: 12px !important;
+    border-color: #d7d7e3 !important;
+    background: #fafbff !important;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    background: #fff !important;
+    border-color: #9a9ab1 !important;
+    box-shadow: 0 0 0 4px rgba(120, 120, 160, 0.12) !important;
+  }
+  
+  /* Buttons */
+  .btn {
+    border-radius: 12px !important;
+  }
+  
+  .btn-primary,
+  .btn-danger,
+  .btn-success,
+  .btn-secondary {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  

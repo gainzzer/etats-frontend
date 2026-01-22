@@ -1,0 +1,313 @@
+/* =========================
+   ETATS Reports Page (FULL)
+   Matches real class names:
+   report-page, report-grid, report-card, etc.
+   ========================= */
+
+/* Page */
+.report-page {
+  padding: 24px 32px;
+  background: #f6f7fb;
+  min-height: calc(100vh - 64px);
+}
+
+/* Header */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.report-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  color: #111827;
+}
+
+.report-subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.report-refresh {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.report-refresh:hover {
+  border-color: #c7cdd6;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Layout */
+.report-grid {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.report-left,
+.report-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================
+   LEFT SIDE: ReportForm (Bootstrap card)
+   ========================= */
+
+.report-left .card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.06);
+}
+
+.report-left .card h4 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.report-left .card h5 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.report-left .form-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.report-left .form-control,
+.report-left .form-select {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 11px 12px;
+  background: #fafbff;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.report-left .form-control:focus,
+.report-left .form-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.report-left textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.report-left .btn {
+  border-radius: 12px;
+  font-weight: 900;
+  padding: 12px 14px;
+}
+
+.report-left .btn-primary,
+.report-left .btn-success {
+  width: 100%;
+}
+
+.report-left hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 16px 0;
+}
+
+/* =========================
+   RIGHT SIDE + Saved Reports
+   (TaskInfoCard, ReportViewer, SavedReportsList)
+   ALL use .report-card
+   ========================= */
+
+.report-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.06);
+}
+
+/* Title inside report-card */
+.report-card-title {
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+/* Muted text */
+.report-muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Key-value rows (Task info + Generated date) */
+.report-kv {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.report-kv:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.report-kv span {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.report-kv b {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: right;
+  max-width: 70%;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Sections */
+.report-section {
+  margin-top: 14px;
+  border-top: 1px solid #eef2f7;
+  padding-top: 14px;
+}
+
+.report-section-title {
+  font-size: 13px;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Summary & Notes boxes */
+.report-summary,
+.report-content {
+  background: #fafbff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.report-summary b,
+.report-content b {
+  color: #111827;
+  font-weight: 900;
+}
+
+/* Assigned employees list */
+.report-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-list-item {
+  padding: 10px 0;
+  border-top: 1px dashed #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+}
+
+.report-list-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Saved reports list */
+.report-saved-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.report-saved-item {
+  padding: 12px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.report-saved-item:hover {
+  background: #f3f6ff;
+  transform: translateY(-1px);
+}
+
+.report-saved-item.active {
+  background: #eef2ff;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.12);
+  border: 1px solid #c7d2fe;
+}
+
+.report-saved-title {
+  font-weight: 900;
+  color: #111827;
+  font-size: 14px;
+}
+
+.report-saved-meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 1100px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-page {
+    padding: 16px;
+  }
+
+  .report-title {
+    font-size: 28px;
+  }
+
+  .report-card-title {
+    font-size: 22px;
+  }
+}
